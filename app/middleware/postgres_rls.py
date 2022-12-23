@@ -43,3 +43,7 @@ class PostgresRLSMiddleware:
         else:
             global_tenant_id.set(request_tenant_id)
             await self.app(scope, receive, send)
+
+
+def get_global_tenant_id():
+    return global_tenant_id.get()
